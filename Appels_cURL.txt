@@ -1,0 +1,21 @@
+Appels cURL pour le Controller
+Voici des exemples d'appels cURL pour tester les différentes routes :
+
+Récupérer tous les départements:
+	curl -i localhost:8080/departments
+
+Ajouter un nouveau département:
+	curl -i -X POST localhost:8080/departments \
+		-H "Content-type:application/json" \
+		-d "{\"name\": \"Human Resources\"}"
+		
+Récupérer un département par ID:
+	curl -i localhost:8080/departments/1
+
+Mettre à jour un département:
+	curl -i -X PUT localhost:8080/departments/1 \
+		-H "Content-type:application/json" \
+		-d "{\"name\": \"Marketing\"}"
+	
+Supprimer un département:
+	curl -i -X DELETE localhost:8080/departments/1
