@@ -1,0 +1,14 @@
+@startuml
+actor Client
+participant "EmployeeController" as Controller
+participant "EmployeeRepository" as Repository
+participant "Database" as DB
+
+Client -> Controller: POST /employees (Employee JSON)
+Controller -> Repository: save(newEmployee)
+Repository -> DB: Insert Employee
+DB --> Repository: Employee saved (ID generated)
+Repository --> Controller: Employee saved
+Controller --> Client: Return Employee (with ID)
+
+@enduml
